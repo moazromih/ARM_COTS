@@ -1,6 +1,0 @@
-{
-    "files.associations": {
-        "rcc_private.h": "c",
-        "rcc_config.h": "c"
-    }
-}

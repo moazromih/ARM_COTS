@@ -1,0 +1,8 @@
+{
+    "files.associations": {
+        "gpio_interface.h": "c",
+        "ir_sensor_config.h": "c",
+        "nvic_config.h": "c",
+        "rcc_config.h": "c"
+    }
+}
