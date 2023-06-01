@@ -21,4 +21,8 @@
 #define EIGHT_STEPS_DELAY   2500
 #define FOUR_STEPS_DELAY    5000
 
+
+static void ResetColumns(void);
+
+
 #endif

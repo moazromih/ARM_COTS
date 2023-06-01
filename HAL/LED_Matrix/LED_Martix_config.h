@@ -10,21 +10,21 @@
 
 #define MATRIX_RESOLUTION   EIGHTxEIGHT
 #define ROW0_PORT           GPIOA
-#define ROW0_PIN            PIN0
+#define ROW0_PIN            PIN1
 #define ROW1_PORT           GPIOA
-#define ROW1_PIN            PIN1
+#define ROW1_PIN            PIN2
 #define ROW2_PORT           GPIOA
-#define ROW2_PIN            PIN2
+#define ROW2_PIN            PIN3
 #define ROW3_PORT           GPIOA
-#define ROW3_PIN            PIN3
+#define ROW3_PIN            PIN4
 #define ROW4_PORT           GPIOA
-#define ROW4_PIN            PIN4
+#define ROW4_PIN            PIN5
 #define ROW5_PORT           GPIOA
-#define ROW5_PIN            PIN5
+#define ROW5_PIN            PIN6
 #define ROW6_PORT           GPIOA
-#define ROW6_PIN            PIN6
+#define ROW6_PIN            PIN7
 #define ROW7_PORT           GPIOA
-#define ROW7_PIN            PIN7
+#define ROW7_PIN            PIN8
 
 #define COL0_PORT           GPIOB
 #define COL0_PIN            PIN0
