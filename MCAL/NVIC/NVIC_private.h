@@ -37,7 +37,7 @@ typedef struct
 #define GRP_1_SUB_3_BITS        4
 #define GRP_2_SUB_2_BITS        5
 #define GRP_3_SUB_1_BITS        6
-#define GRP_0_SUB_4_BITS        7
+#define GRP_4_SUB_0_BITS        7
 
 #define FOUR_BITS               4
 #define THIRTY_TWO_BITS         32

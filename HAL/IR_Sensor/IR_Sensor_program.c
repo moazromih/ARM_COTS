@@ -36,7 +36,7 @@ void HIR_SENSOR_voidInit()
     MEXTI_voidSetCallBack(IR_SENSOR_LINE,&HIR_SENSOR_voidReceiveFrame);
     MEXTI_voidEnableEXTILineInterrupt(IR_SENSOR_LINE);
     MNVIC_voidInit();
-    MNVIC_voidEnablePeripheralInterrput(MNIVC_EXTI0);
+    MNVIC_voidEnablePeripheralInterrput(MNVIC_EXTI8);
 }
 
 

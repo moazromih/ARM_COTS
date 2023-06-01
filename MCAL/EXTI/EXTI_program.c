@@ -7,7 +7,6 @@
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 
-#include "SYSCFG_interface.h"
 
 #include "EXTI_interface.h"
 #include "EXTI_private.h"
