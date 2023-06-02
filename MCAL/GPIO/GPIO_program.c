@@ -19,17 +19,17 @@ void MGPIO_voidSetPinMode(u8 Copy_u8Port, u8 Copy_u8PinNumber, u8 Copy_u8Mode)
     {
     /* Set the 2 Bits corresponding to the pin in the MODER register to be as the desired direction. */
     case GPIOA:
-        GPIOA_REG->GPIOx_MODER &= ~(TWO_BITS_MSK<<(Copy_u8PinNumber*2));
+        GPIOA_REG->GPIOx_MODER &= ~(BIT_MSK(2)<<(Copy_u8PinNumber*2));
         GPIOA_REG->GPIOx_MODER |= (Copy_u8Mode<<(Copy_u8PinNumber*2));
         break;
 
     case GPIOB:
-        GPIOB_REG->GPIOx_MODER &= ~(TWO_BITS_MSK<<(Copy_u8PinNumber*2));
+        GPIOB_REG->GPIOx_MODER &= ~(BIT_MSK(2)<<(Copy_u8PinNumber*2));
         GPIOB_REG->GPIOx_MODER |= (Copy_u8Mode<<(Copy_u8PinNumber*2));
         break;
 
     case GPIOC:
-        GPIOC_REG->GPIOx_MODER &= ~(TWO_BITS_MSK<<(Copy_u8PinNumber*2));
+        GPIOC_REG->GPIOx_MODER &= ~(BIT_MSK(2)<<(Copy_u8PinNumber*2));
         GPIOC_REG->GPIOx_MODER |= (Copy_u8Mode<<(Copy_u8PinNumber*2));
         break;
 
@@ -103,17 +103,17 @@ void MGPIO_voidSetOutputSpeed(u8 Copy_u8Port, u8 Copy_u8PinNumber, u8 Copy_u8Out
     {
     /* Set the 2 Bits corresponding to the pin in hte OSPEEDR register to be as the desired speed. */
     case GPIOA:
-        GPIOA_REG->GPIOx_OSPEEDR &= ~(TWO_BITS_MSK<<(Copy_u8PinNumber*2));
+        GPIOA_REG->GPIOx_OSPEEDR &= ~(BIT_MSK(2)<<(Copy_u8PinNumber*2));
         GPIOA_REG->GPIOx_OSPEEDR |= (Copy_u8OutputSpeed<<(Copy_u8PinNumber*2));
         break;
 
     case GPIOB:
-        GPIOB_REG->GPIOx_OSPEEDR &= ~(TWO_BITS_MSK<<(Copy_u8PinNumber*2));
+        GPIOB_REG->GPIOx_OSPEEDR &= ~(BIT_MSK(2)<<(Copy_u8PinNumber*2));
         GPIOB_REG->GPIOx_OSPEEDR |= (Copy_u8OutputSpeed<<(Copy_u8PinNumber*2));
         break;
 
     case GPIOC:
-        GPIOC_REG->GPIOx_OSPEEDR &= ~(TWO_BITS_MSK<<(Copy_u8PinNumber*2));
+        GPIOC_REG->GPIOx_OSPEEDR &= ~(BIT_MSK(2)<<(Copy_u8PinNumber*2));
         GPIOC_REG->GPIOx_OSPEEDR |= (Copy_u8OutputSpeed<<(Copy_u8PinNumber*2));
         break;
 
@@ -130,17 +130,17 @@ void MGPIO_voidSetInputConnectionType(u8 Copy_u8Port, u8 Copy_u8PinNumber, u8 Co
     {
     /* Set the 2 Bits corresponding to the pin in the PUPDR register to be as the desired connection. */
     case GPIOA:
-        GPIOA_REG->GPIOx_PUPDR &= ~(TWO_BITS_MSK<<(Copy_u8PinNumber*2));
+        GPIOA_REG->GPIOx_PUPDR &= ~(BIT_MSK(2)<<(Copy_u8PinNumber*2));
         GPIOA_REG->GPIOx_PUPDR |= (Copy_u8ConnectionType<<(Copy_u8PinNumber*2));
         break;
 
     case GPIOB:
-        GPIOB_REG->GPIOx_PUPDR &= ~(TWO_BITS_MSK<<(Copy_u8PinNumber*2));
+        GPIOB_REG->GPIOx_PUPDR &= ~(BIT_MSK(2)<<(Copy_u8PinNumber*2));
         GPIOB_REG->GPIOx_PUPDR |= (Copy_u8ConnectionType<<(Copy_u8PinNumber*2));
         break;
 
     case GPIOC:
-        GPIOC_REG->GPIOx_PUPDR &= ~(TWO_BITS_MSK<<(Copy_u8PinNumber*2));
+        GPIOC_REG->GPIOx_PUPDR &= ~(BIT_MSK(2)<<(Copy_u8PinNumber*2));
         GPIOC_REG->GPIOx_PUPDR |= (Copy_u8ConnectionType<<(Copy_u8PinNumber*2));
         break;
 
@@ -349,16 +349,28 @@ void MGPIO_voidConfigurePin(MGPIO_Pin_t* pPin)
 }
 
 
-void MGPIO_voidSetPortSpecificValue(u8 Copy_u8Port, u16 Copy_u16Value)
+void MGPIO_voidSetPortSpecificValue(u8 Copy_u8Port, u8 Copy_u8StartPin, u8 Copy_u8NumberOfPins , u32 Copy_u32Value)
 {
     switch (Copy_u8Port)
     {
+    /* Set the  bit corresponding to the intended pin in the ODR register to be as the desired value */
     case GPIOA:
-        
+        GPIOA_REG->GPIOx_ODR &= ~(BIT_MSK(Copy_u8NumberOfPins)<<(Copy_u8StartPin));
+        GPIOA_REG->GPIOx_ODR |= (Copy_u32Value<<Copy_u8StartPin);
         break;
-    
+
+    case GPIOB:
+        GPIOB_REG->GPIOx_ODR &= ~(BIT_MSK(Copy_u8NumberOfPins)<<(Copy_u8StartPin));
+        GPIOB_REG->GPIOx_ODR |= (Copy_u32Value<<Copy_u8StartPin);
+        break;
+
+    case GPIOC:
+        GPIOC_REG->GPIOx_ODR &= ~(BIT_MSK(Copy_u8NumberOfPins)<<(Copy_u8StartPin));
+        GPIOC_REG->GPIOx_ODR |= (Copy_u32Value<<Copy_u8StartPin);
+        break;
+
     default:
-    
+        /* ERROR */
         break;
     }
 }

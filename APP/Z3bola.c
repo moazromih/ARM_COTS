@@ -1,3 +1,9 @@
+/*********************************************
+ * Author:          Moaz Mohamed Romih
+ * Creation Data:   29 MAY, 2023
+ * Version:         v1.0
+ * Compiler:        GNU ARM-GCC
+ ********************************************/
 #include "STD_TYPES.h"
 #include "BIT_MATH.h"
 

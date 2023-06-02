@@ -16,5 +16,7 @@
 #define GET_REG(REG_NAME)           (REG_NAME)
 #define CLR_REG(REG_NAME)           (REG_NAME = 0)
 
+#define BIT_MSK_32                  0xFFFFFFFF
+#define BIT_MSK(NUM_OF_BITS)        (BIT_MSK_32>>(32-NUM_OF_BITS))
 
 #endif
