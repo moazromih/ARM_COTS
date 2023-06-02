@@ -3,6 +3,9 @@
         "gpio_interface.h": "c",
         "ir_sensor_config.h": "c",
         "nvic_config.h": "c",
-        "rcc_config.h": "c"
+        "rcc_config.h": "c",
+        "stk_interface.h": "c",
+        "rcc_interface.h": "c",
+        "dac_interface.h": "c"
     }
 }
