@@ -374,3 +374,26 @@ void MGPIO_voidSetPortSpecificValue(u8 Copy_u8Port, u8 Copy_u8StartPin, u8 Copy_
         break;
     }
 }
+
+void MGPIO_voidSetPinAlternateFunction(u8 Copy_u8Port, u8 Copy_u8PinNumber, u8 Copy_u8Function)
+{
+    switch (Copy_u8Port)
+    {
+    case GPIOA:
+        GPIOA_REG->GPIOx_AFR[Copy_u8PinNumber/8] &= ~(BIT_MSK(4)<<(Copy_u8PinNumber%8)*4);
+        GPIOA_REG->GPIOx_AFR[Copy_u8PinNumber/8] |= (Copy_u8Function<<(Copy_u8PinNumber%8)*4);
+        break;
+    case GPIOB:
+        GPIOB_REG->GPIOx_AFR[Copy_u8PinNumber/8] &= ~(BIT_MSK(4)<<(Copy_u8PinNumber%8)*4);
+        GPIOB_REG->GPIOx_AFR[Copy_u8PinNumber/8] |= (Copy_u8Function<<(Copy_u8PinNumber%8)*4);
+        break;
+    case GPIOC:
+        GPIOC_REG->GPIOx_AFR[Copy_u8PinNumber/8] &= ~(BIT_MSK(4)<<(Copy_u8PinNumber%8)*4);
+        GPIOC_REG->GPIOx_AFR[Copy_u8PinNumber/8] |= (Copy_u8Function<<(Copy_u8PinNumber%8)*4);
+        break;
+    
+    default:
+        /* ERROR */
+        break;
+    }
+}

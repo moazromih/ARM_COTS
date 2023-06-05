@@ -6,6 +6,10 @@
         "rcc_config.h": "c",
         "stk_interface.h": "c",
         "rcc_interface.h": "c",
-        "dac_interface.h": "c"
+        "dac_interface.h": "c",
+        "tft_private.h": "c",
+        "tft_config.h": "c",
+        "tft_interface.h": "c",
+        "elcc.h": "c"
     }
 }
