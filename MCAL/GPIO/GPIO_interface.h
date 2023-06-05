@@ -64,6 +64,22 @@ typedef struct
 #define HIGH                            1
 #define LOW                             0
 
+#define AF0                             0
+#define AF01                            1
+#define AF02                            2
+#define AF03                            3
+#define AF04                            4
+#define AF05                            5
+#define AF06                            6
+#define AF07                            7
+#define AF08                            8
+#define AF09                            9
+#define AF10                            10
+#define AF11                            11
+#define AF12                            12
+#define AF13                            13
+#define AF14                            14
+#define AF15                            15
 
 /*  Port Options:
         GPIOA
@@ -318,6 +334,6 @@ void MGPIO_voidConfigurePin(MGPIO_Pin_t* pPin);
 
 void MGPIO_voidSetPortSpecificValue(u8 Copy_u8Port, u8 Copy_u8StartPin, u8 Copy_u8NumberOfPins , u32 Copy_u32Value);
 
-
+void MGPIO_voidSetPinAlternateFunction(u8 Copy_u8Port, u8 Copy_u8PinNumber, u8 Copy_u8Function);
 
 #endif
